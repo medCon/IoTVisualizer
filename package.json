@@ -11,15 +11,20 @@
   "dependencies": {
     "chart.js": "^2.8.0",
     "expo": "^32.0.0",
+    "moment": "^2.24.0",
     "react": "16.5.0",
     "react-art": "^16.8.4",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.4",
+    "react-moment": "^0.8.4",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-svg-charts": "^5.2.0",
     "react-native-web": "^0.11.1",
+    "react-native-websocket": "^1.0.2",
     "react-router-dom": "^4.4.0",
     "react-router-native": "^4.4.0",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^2.1.8",
+    "react-websocket": "^2.0.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"

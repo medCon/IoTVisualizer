@@ -22,8 +22,8 @@
     "react-native-svg-charts": "^5.2.0",
     "react-native-web": "^0.11.1",
     "react-native-websocket": "^1.0.2",
-    "react-router-dom": "^4.4.0",
-    "react-router-native": "^4.4.0",
+    "react-router-dom": "^5.0.0",
+    "react-router-native": "^5.0.0",
     "react-scripts": "^2.1.8",
     "react-websocket": "^2.0.1"
   },

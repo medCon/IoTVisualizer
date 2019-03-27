@@ -52,11 +52,11 @@ class Home extends Component {
             fill: false,
             label: 'Moisture',
             yAxisID: 'Moisture',
-            borderColor: "rgba(124, 120, 240, 1)",
-            pointBoarderColor: "rgba(124, 120, 240, 1)",
-            backgroundColor: "rgba(124, 120, 240, 0.4)",
-            pointHoverBackgroundColor: "rgba(124, 120, 240, 1)",
-            pointHoverBorderColor: "rgba(124, 120, 240, 1)",
+            borderColor: "rgba(122, 207, 240, 1)",
+            pointBoarderColor: "rgba(122, 207, 240, 1)",
+            backgroundColor: "rgba(122, 207, 240, 0.4)",
+            pointHoverBackgroundColor: "rgba(122, 207, 240, 1)",
+            pointHoverBorderColor: "rgba(122, 207, 240, 1)",
             data: this.moistureData
         }
         ]

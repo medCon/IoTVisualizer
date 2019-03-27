@@ -9,6 +9,7 @@ class Home extends Component {
     timeData = [];
     temperatureData = [];
     humidityData = [];
+    moistureData = [];
 
 
     constructor(props) {
@@ -18,6 +19,7 @@ class Home extends Component {
             this.timeData.push(element.Timestamp);
             this.temperatureData.push(element.Temperature);
             this.humidityData.push(element.Humidity);
+            this.moistureData.push(element.Moisture);
         });
     }
 
@@ -45,6 +47,17 @@ class Home extends Component {
             pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
             pointHoverBorderColor: "rgba(24, 120, 240, 1)",
             data: this.humidityData
+        },
+        {
+            fill: false,
+            label: 'Moisture',
+            yAxisID: 'Moisture',
+            borderColor: "rgba(124, 120, 240, 1)",
+            pointBoarderColor: "rgba(124, 120, 240, 1)",
+            backgroundColor: "rgba(124, 120, 240, 0.4)",
+            pointHoverBackgroundColor: "rgba(124, 120, 240, 1)",
+            pointHoverBorderColor: "rgba(124, 120, 240, 1)",
+            data: this.moistureData
         }
         ]
     };
@@ -52,7 +65,7 @@ class Home extends Component {
     basicOptions = {
         title: {
             display: true,
-            text: 'Temperature & Humidity Real-time Data',
+            text: 'Temperature, Humidity & Moisture Real-time Data',
             fontSize: 36
         },
         scales: {
@@ -68,8 +81,16 @@ class Home extends Component {
                 id: 'Humidity',
                 type: 'linear',
                 scaleLabel: {
-                labelString: 'Humidity(%)',
-                display: true
+                    labelString: 'Humidity(%)',
+                    display: true
+                },
+                position: 'right'
+            }, {
+                id: 'Moisture',
+                type: 'linear',
+                scaleLabel: {
+                    labelString: 'Moisture(%)',
+                    display: true
                 },
                 position: 'right'
             }]
@@ -98,6 +119,13 @@ class Home extends Component {
             }
             if (this.humidityData.length > maxLen) {
                 this.humidityData.shift();
+            }
+
+            if (obj.Moisture) {
+                this.moistureData.push(obj.Moisture);
+            }
+            if (this.moistureData.length > maxLen) {
+                this.moistureData.shift();
             }
 
             this.chartReference.chartInstance.update();

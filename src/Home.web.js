@@ -121,7 +121,7 @@ class Home extends Component {
                 this.humidityData.shift();
             }
 
-            if (obj.Moisture) {
+            if (obj.Moisture >= 0) {
                 this.moistureData.push(obj.Moisture);
             }
             if (this.moistureData.length > maxLen) {

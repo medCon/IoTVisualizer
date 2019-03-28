@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, TouchableOpacity, Button, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import weatherData from './weatherStore';
 import { Line } from 'react-chartjs-2';
 import Websocket from 'react-websocket';
-import $ from 'jquery';
 import IoTManager from './IoTManager';
 
 class Home extends Component {
@@ -159,7 +158,7 @@ class Home extends Component {
                         options={this.basicOptions}
                     />
                 </View>
-                <IoTManager/>
+                <IoTManager name="IoTManager"/>
             </View>
         );
     }

@@ -4,25 +4,15 @@ import { View, Button, StyleSheet } from 'react-native';
 
 
 class IoTManager extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     handleDisplayOn () {
         fetch('https://iotmanager.azurewebsites.net/display-on', {
             method: 'POST',
             body: JSON.stringify({}),
         });
-        // $.ajax
-        // ({ 
-        //     url: 'https://iotmanager.azurewebsites.net/display-on',
-        //     data: {},
-        //     type: 'post',
-        //     success: function(result)
-        //     {
-        //         console.log(result);
-        //     }
-        // });
     };
 
     handleDisplayOff () {
@@ -30,16 +20,6 @@ class IoTManager extends Component {
             method: 'POST',
             body: JSON.stringify({}),
         });
-        // $.ajax
-        // ({ 
-        //     url: 'https://iotmanager.azurewebsites.net/display-off',
-        //     data: {},
-        //     type: 'post',
-        //     success: function(result)
-        //     {
-        //         console.log(result);
-        //     }
-        // });
     };
 
     handleStart () {
@@ -47,16 +27,6 @@ class IoTManager extends Component {
             method: 'POST',
             body: JSON.stringify({}),
         });
-        // $.ajax
-        // ({ 
-        //     url: 'https://iotmanager.azurewebsites.net/start',
-        //     data: {},
-        //     type: 'post',
-        //     success: function(result)
-        //     {
-        //         console.log(result);
-        //     }
-        // });
     };
 
     handleStop () {
@@ -64,16 +34,6 @@ class IoTManager extends Component {
             method: 'POST',
             body: JSON.stringify({}),
         });
-        // $.ajax
-        // ({ 
-        //     url: 'https://iotmanager.azurewebsites.net/stop',
-        //     data: {},
-        //     type: 'post',
-        //     success: function(result)
-        //     {
-        //         console.log(result);
-        //     }
-        // });
     };
 
     render() {
@@ -114,8 +74,10 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     buttonContainer: {
-      flex: 1,
-      padding: 5
+        flex: 1,
+        padding: 5,
+        width:150,
+        alignItems: 'stretch'
     }
   });
 

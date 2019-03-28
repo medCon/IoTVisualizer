@@ -1,8 +1,47 @@
 export default [
     {
-        "deviceId": "device1",
-        "timestamp": new Date("2019-03-12T19:18:46+02:00"),
-        "Temperature": 26.3,
-        "Humidity": 35.24
+        "deviceId":"Esp32Device1",
+        "messageId":748,
+        "timestamp":"2019-03-28T14:55:55+0200",
+        "Temperature":26.129999,
+        "Humidity":23.702148,
+        "Moisture":0,"time":
+        "2019:03:28T12:55:55"
+    },
+    {
+        "deviceId":"Esp32Device1",
+        "messageId":749,
+        "timestamp":"2019-03-28T14:56:10+0200",
+        "Temperature":26.16,
+        "Humidity":23.642578,
+        "Moisture":0,
+        "time":"2019:03:28T12:56:10"
+    },
+    {
+        "deviceId":"Esp32Device1",
+        "messageId":750,
+        "timestamp":"2019-03-28T14:56:26+0200",
+        "Temperature":26.18,
+        "Humidity":24.530273,
+        "Moisture":0,
+        "time":"2019:03:28T12:56:26"
+    },
+    {
+        "deviceId":"Esp32Device1",
+        "messageId":751,
+        "timestamp":"2019-03-28T14:56:41+0200",
+        "Temperature":26.08,
+        "Humidity":19.384766,
+        "Moisture":0,
+        "time":"2019:03:28T12:56:41"
+    },
+    {
+        "deviceId":"Esp32Device1",
+        "messageId":752,
+        "timestamp":"2019-03-28T14:56:57+0200",
+        "Temperature":26.059999,
+        "Humidity":19.220703,
+        "Moisture":0,
+        "time":"2019:03:28T12:56:57"
     }
 ];

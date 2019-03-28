@@ -1,7 +1,7 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start-native": "expo start",
+    "start-native": "expo start -c",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
@@ -18,7 +18,6 @@
     "react-dom": "^16.8.4",
     "react-moment": "^0.8.4",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-native-svg": "^9.3.6",
     "react-native-svg-charts": "^5.2.0",
     "react-native-web": "^0.11.1",
     "react-native-websocket": "^1.0.2",

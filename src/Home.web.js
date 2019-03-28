@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Button, StyleSheet } from 'react-native';
 import weatherData from './weatherStore';
 import { Line } from 'react-chartjs-2';
 import Websocket from 'react-websocket';
+import $ from 'jquery';
+import IoTManager from './IoTManager';
 
 class Home extends Component {
     chartReference = {};
@@ -144,17 +146,20 @@ class Home extends Component {
     render() {
         return (
             <View>
-                <Websocket url='wss://iotmanager.azurewebsites.net'
-                    onOpen={this.handleOpen} onClose={this.handleClose}
-                    reconnect={true} debug={true}
-                    onMessage={this.handleData.bind(this)}/>
-                <Line 
-                    ref={(reference) => this.chartReference = reference }
-                    data={this.data}
-                    width={1200}
-                    height={600}
-                    options={this.basicOptions}
-                />
+                <View>
+                    <Websocket url='wss://iotmanager.azurewebsites.net'
+                        onOpen={this.handleOpen} onClose={this.handleClose}
+                        reconnect={true} debug={true}
+                        onMessage={this.handleData.bind(this)}/>
+                    <Line 
+                        ref={(reference) => this.chartReference = reference }
+                        data={this.data}
+                        width={1200}
+                        height={600}
+                        options={this.basicOptions}
+                    />
+                </View>
+                <IoTManager/>
             </View>
         );
     }

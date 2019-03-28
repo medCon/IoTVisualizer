@@ -46,10 +46,11 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 50,
-    padding: 50
+    //padding: 50
   },
 });

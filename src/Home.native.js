@@ -19,24 +19,24 @@ class Home extends Component {
         super(props);
 
     }
-    JSONStringify(object) {
-        var cache = [];        
-        var str = JSON.stringify(object,
-            // custom replacer fxn - gets around "TypeError: Converting circular structure to JSON" 
-            function(key, value) {
-                if (typeof value === 'object' && value !== null) {
-                    if (cache.indexOf(value) !== -1) {
-                        // Circular reference found, discard key
-                        return;
-                    }
-                    // Store value in our collection
-                    cache.push(value);
-                }
-                return value;
-            }, 4);
-        cache = null; // enable garbage collection
-        return str;
-    };
+    // JSONStringify(object) {
+    //     var cache = [];        
+    //     var str = JSON.stringify(object,
+    //         // custom replacer fxn - gets around "TypeError: Converting circular structure to JSON" 
+    //         function(key, value) {
+    //             if (typeof value === 'object' && value !== null) {
+    //                 if (cache.indexOf(value) !== -1) {
+    //                     // Circular reference found, discard key
+    //                     return;
+    //                 }
+    //                 // Store value in our collection
+    //                 cache.push(value);
+    //             }
+    //             return value;
+    //         }, 4);
+    //     cache = null; // enable garbage collection
+    //     return str;
+    // };
 
     handleData(event) {
         try {
@@ -74,36 +74,36 @@ class Home extends Component {
         const verticalContentInset = { top: 10, bottom: 10 }
         const xAxisHeight = 100
 
-        // const CustomGrid = ({ x, y, data, ticks }) => (
-        //     <G>
-        //         {
-        //             // Horizontal grid
-        //             ticks.map(tick => (
-        //                 <Line
-        //                     key={ tick }
-        //                     x1={ '0%' }
-        //                     x2={ '100%' }
-        //                     y1={ y(tick) }
-        //                     y2={ y(tick) }
-        //                     stroke={ 'rgba(0,0,0,0.2)' }
-        //                 />
-        //             ))
-        //         }
-        //         {
-        //             // Vertical grid
-        //             data.map((_, index) => (
-        //                 <Line
-        //                     key={ index }
-        //                     y1={ '0%' }
-        //                     y2={ '100%' }
-        //                     x1={ x(index) }
-        //                     x2={ x(index) }
-        //                     stroke={ 'rgba(0,0,0,0.2)' }
-        //                 />
-        //             ))
-        //         }
-        //     </G>
-        // )
+        const CustomGrid = ({ x, y, data, ticks }) => (
+            <G>
+                {
+                    // Horizontal grid
+                    ticks.map(tick => (
+                        <Line
+                            key={ tick }
+                            x1={ '0%' }
+                            x2={ '100%' }
+                            y1={ y(tick) }
+                            y2={ y(tick) }
+                            stroke={ 'rgba(0,0,0,0.2)' }
+                        />
+                    ))
+                }
+                {
+                    // Vertical grid
+                    data.map((_, index) => (
+                        <Line
+                            key={ index }
+                            y1={ '0%' }
+                            y2={ '100%' }
+                            x1={ x(index) }
+                            x2={ x(index) }
+                            stroke={ 'rgba(0,0,0,0.2)' }
+                        />
+                    ))
+                }
+            </G>
+        )
         return (
             <View style={{ flex: 1, flexDirection: 'column' }}>
                 <View style={{ height: 250, padding: 10, flex:3, flexDirection: 'row' }}>

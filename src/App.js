@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Router, Switch, Route } from './routing';
 import Home from './Home';
 import Pokemon from './Pokemon';
+import Dashboard from './Dashboard';
 
 export default class App extends React.Component {
   state = {
@@ -14,6 +15,7 @@ export default class App extends React.Component {
     });
   };
 
+
   render() {
     return (
       <View style={styles.container}>
@@ -23,7 +25,7 @@ export default class App extends React.Component {
               exact 
               path="/" 
               render={props => (
-                <Home {...props} selectPokemon={this.selectPokemon}/>
+                <Dashboard {...props} selectPokemon={this.selectPokemon}/>
               )} 
             />
             <Route 
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50,
+    //marginTop: 50,
     //padding: 50
   },
 });

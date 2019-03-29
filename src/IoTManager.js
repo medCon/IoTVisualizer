@@ -62,16 +62,16 @@ class IoTManager extends Component {
 
 const styles = StyleSheet.create({
     colContainer: {
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 100,
     },
     rowContainer: {
-      flex: 1,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
+        flexDirection: 'row',
+        alignItems: 'stretch',
+        justifyContent: 'center',
+        height: 50,
     },
     buttonContainer: {
         flex: 1,
@@ -79,6 +79,6 @@ const styles = StyleSheet.create({
         width:150,
         alignItems: 'stretch'
     }
-  });
+ });
 
 export default IoTManager;

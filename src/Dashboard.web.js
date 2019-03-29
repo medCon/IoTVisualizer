@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { canvas } from 'canvas-gauges';
+import { RadialGauge } from 'react-canvas-gauges';
 import Websocket from 'react-websocket';
 import numeral from 'numeral';
 import moment from 'moment';
@@ -24,8 +24,8 @@ class Dashboard extends Component {
 
     handleData(event) {
         try {
-            console.log(event.data);
-            var obj = JSON.parse(event.data);
+            console.log(event);
+            var obj = JSON.parse(event);
             if(!obj.timestamp || !obj.Temperature) {
                 return;
             }
@@ -82,53 +82,36 @@ class Dashboard extends Component {
 
                 <View style={ styles.firstRowContainer }>
                     <View style={ styles.boxContainer }>
-                        <canvas data-type="radial-gauge"
-                            data-width="200"
-                            data-height="200"
-                            data-units="°C"
-                            data-title="Temperature"
-                            data-min-value="-30"
-                            data-max-value="50"
-                            data-major-ticks="[-30,-20,-10,0,10,20,30,40,50]"
-                            data-minor-ticks="2"
-                            data-stroke-ticks="true"
-                            data-highlights='[ {"from": -50, "to": 0, "color": "rgba(0,0, 255, .3)"},
-                                {"from": 0, "to": 50, "color": "rgba(255, 0, 0, .3)"} ]'
-                            data-ticks-angle="225"
-                            data-start-angle="67.5"
-                            data-color-major-ticks="#ddd"
-                            data-color-minor-ticks="#ddd"
-                            data-color-title="#eee"
-                            data-color-units="#ccc"
-                            data-color-numbers="#eee"
-                            data-color-plate="#222"
-                            data-border-shadow-width="0"
-                            data-borders="true"
-                            data-needle-type="arrow"
-                            data-needle-width="2"
-                            data-needle-circle-size="7"
-                            data-needle-circle-outer="true"
-                            data-needle-circle-inner="false"
-                            data-animation-duration="1500"
-                            data-animation-rule="linear"
-                            data-color-border-outer="#333"
-                            data-color-border-outer-end="#111"
-                            data-color-border-middle="#222"
-                            data-color-border-middle-end="#111"
-                            data-color-border-inner="#111"
-                            data-color-border-inner-end="#333"
-                            data-color-needle-shadow-down="#333"
-                            data-color-needle-circle-outer="#333"
-                            data-color-needle-circle-outer-end="#111"
-                            data-color-needle-circle-inner="#111"
-                            data-color-needle-circle-inner-end="#222"
-                            data-value-box-border-radius="0"
-                            data-color-value-box-rect="#222"
-                            data-color-value-box-rect-end="#333"
+                        <RadialGauge
+                            units='°C'
+                            title='Temperature'
                             value={this.state.theData.Temperature}
-                        ></canvas>
+                            minValue={-30}
+                            maxValue={50}
+                            majorTicks={['-30','-20','-10','0','10','20','30','40','50']}
+                            minorTicks={2}
+                            width={200}
+                            height={200}
+                            strokeTicks='true'
+                            highlights={[ {"from": -30, "to": 0, "color": "rgba(0,0, 255, .3)"},
+                                {"from": 0, "to": 50, "color": "rgba(255, 0, 0, .3)"} ]}
+                        ></RadialGauge>
                     </View>
                     <View style={ styles.boxContainer }>
+                        <RadialGauge
+                            units='°C'
+                            title='Temperature'
+                            value={this.state.theData.Temperature}
+                            minValue={-30}
+                            maxValue={50}
+                            majorTicks={['-30','-20','-10','0','10','20','30','40','50']}
+                            minorTicks={2}
+                            width={200}
+                            height={200}
+                            strokeTicks='true'
+                            highlights={[ {"from": -30, "to": 0, "color": "rgba(0,0, 255, .3)"},
+                                {"from": 0, "to": 50, "color": "rgba(255, 0, 0, .3)"} ]}
+                        ></RadialGauge>
                     </View>
                 </View>
 

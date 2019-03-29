@@ -9,13 +9,13 @@
     "build-web": "react-scripts build"
   },
   "dependencies": {
-    "canvas-gauges": "^2.1.5",
     "chart.js": "^2.8.0",
     "expo": "^32.0.0",
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "react": "16.5.0",
     "react-art": "^16.8.4",
+    "react-canvas-gauges": "^1.2.1",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.4",
     "react-moment": "^0.8.4",

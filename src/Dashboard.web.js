@@ -89,7 +89,7 @@ class Dashboard extends Component {
                             minValue={-30}
                             maxValue={50}
                             majorTicks={['-30','-20','-10','0','10','20','30','40','50']}
-                            minorTicks={2}
+                            minorTicks={5}
                             width={200}
                             height={200}
                             strokeTicks='true'
@@ -99,26 +99,56 @@ class Dashboard extends Component {
                     </View>
                     <View style={ styles.boxContainer }>
                         <RadialGauge
-                            units='°C'
-                            title='Temperature'
-                            value={this.state.theData.Temperature}
-                            minValue={-30}
-                            maxValue={50}
-                            majorTicks={['-30','-20','-10','0','10','20','30','40','50']}
-                            minorTicks={2}
+                            units='hPa'
+                            title='Pressure'
+                            value={this.state.theData.Pressure/100}
+                            minValue={900}
+                            maxValue={1100}
+                            majorTicks={['900','920','940','960','980','1000','1020','1040','1060','1080','1100']}
+                            minorTicks={5}
                             width={200}
                             height={200}
                             strokeTicks='true'
-                            highlights={[ {"from": -30, "to": 0, "color": "rgba(0,0, 255, .3)"},
-                                {"from": 0, "to": 50, "color": "rgba(255, 0, 0, .3)"} ]}
+                            highlights={[ {"from": 900, "to": 1000, "color": "rgba(0,0, 255, .3)"},
+                                {"from": 1000, "to": 1100, "color": "rgba(255, 0, 0, .3)"} ]}
                         ></RadialGauge>
                     </View>
                 </View>
 
                 <View style={ styles.secondRowContainer }>
                     <View style={ styles.boxContainer }>
+                        <RadialGauge
+                            units='%'
+                            title='Humidity'
+                            value={this.state.theData.Humidity}
+                            minValue={0}
+                            maxValue={100}
+                            majorTicks={['0','20','40','60','80','100']}
+                            minorTicks={5}
+                            width={200}
+                            height={200}
+                            strokeTicks='true'
+                            highlights={[ {"from": 0, "to": 20, "color": "rgba(255, 0, 0, .3)"},
+                                {"from": 20, "to": 80, "color": "rgba(0, 255, 0, .3)"},
+                                {"from": 80, "to": 100, "color": "rgba(255, 0, 0, .3)"} ]}
+                        ></RadialGauge>
                     </View>
                     <View style={ styles.boxContainer }>
+                        <RadialGauge
+                            units='%'
+                            title='Soil Moisture'
+                            value={this.state.theData.Moisture}
+                            minValue={0}
+                            maxValue={100}
+                            majorTicks={['0','20','40','60','80','100']}
+                            minorTicks={5}
+                            width={200}
+                            height={200}
+                            strokeTicks='true'
+                            highlights={[ {"from": 0, "to": 33, "color": "rgba(255, 0, 0, .3)"},
+                                {"from": 33, "to": 67, "color": "rgba(0, 255, 0, .3)"},
+                                {"from": 67, "to": 100, "color": "rgba(255, 0, 0, .3)"} ]}
+                        ></RadialGauge>
                     </View>
                 </View>
                 

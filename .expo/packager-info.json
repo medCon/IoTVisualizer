@@ -1,5 +1,10 @@
 {
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://x6-wvn.svilen-nedev.iotvisualizer.exp.direct",
+  "packagerNgrokUrl": "https://packager.x6-wvn.svilen-nedev.iotvisualizer.exp.direct",
+  "ngrokPid": 22532,
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 7264,
+  "webpackServerPort": null
 }

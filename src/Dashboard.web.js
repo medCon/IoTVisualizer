@@ -153,6 +153,11 @@ class Dashboard extends Component {
                 </View>
                 
                 <View style={ styles.spareRowContainer }>
+                    <View style={ styles.boxContainer }>
+                        <Text style={styles.values}>
+                            {moment(this.state.theData.timestamp).format('DD.MM.YYYY HH:mm:ss')}
+                        </Text>
+                    </View>
                 </View>
                 
                 <IoTManager style={styles.rowContainer}/>
